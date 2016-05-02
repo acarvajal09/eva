@@ -5,6 +5,7 @@ module Eva
     attr_accessor :command, :placed
 
     def initialize
+      EvaLogger.log
       @command = nil
       @placed = false
       @table = Table.new(5, 5)
@@ -21,14 +22,19 @@ module Eva
         case command.command
         when Command::WHITE_LIST[0] # PLACE
           place
+          report {|msg| $log.info msg}
         when Command::WHITE_LIST[1] # MOVE
           move
+          report {|msg| $log.info msg}
         when Command::WHITE_LIST[2] # RIGHT
           right
+          report {|msg| $log.info msg}
         when Command::WHITE_LIST[3] # LEFT
           left
+          report {|msg| $log.info msg}
         when Command::WHITE_LIST[4] # REPORT
-          report
+          report {|msg| $log.info msg}
+          report {|msg| puts msg}
         end
       else
         puts error
@@ -81,13 +87,13 @@ module Eva
       direction.move_left!
     end
 
-    # This method output the current position: X,Y,Direction
+    # This method output || log the current position: X,Y,Direction
     #
     # = Example
     #
     # 0,1,NORTH
     def report
-      puts "#{table.x},#{table.y},#{Direction::DIRECTIONS[direction.current]}"
+      yield "#{table.x},#{table.y},#{Direction::DIRECTIONS[direction.current]}"
     end
 
     # This method update the Eva position to X,Y coordinates

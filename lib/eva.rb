@@ -1,4 +1,5 @@
 require 'eva/version'
+require 'eva/eva_logger'
 require 'eva/table'
 require 'eva/direction'
 require 'eva/command'
