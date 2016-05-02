@@ -1,6 +1,11 @@
 module Eva
   class Cli
 
+    # This method start the cli for Eva
+    #
+    # = Example
+    #
+    # Eva::Cli.start
     def self.start
       runner = Runner.new
       prompt = '> '

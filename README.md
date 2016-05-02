@@ -1,5 +1,11 @@
 # Eva
 
+<p align="center">
+<img src="https://github.com/acarvajal09/eva/blob/master/assets/eva.png" alt="Eva"/>
+<br>
+<img src="https://travis-ci.org/acarvajal09/eva.svg?branch=master" alt="travis-status"/>
+</p>
+
 Toy robot simulator
 
 ## Installation
