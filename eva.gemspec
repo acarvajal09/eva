@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["acarvajal09@hotmail.com"]
 
   spec.summary       = %q{Toy Robot Simulator}
-  spec.description   = %q{Ruby problem}
+  spec.description   = %q{Toy Robot Simulator}
   spec.homepage      = "https://github.com/acarvajal09/eva"
   spec.license       = "MIT"
 
